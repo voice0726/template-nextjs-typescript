@@ -23,27 +23,31 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier',
-    'prettier/@typescript-eslint',
-    'prettier/react',
+    'next',
+    'next/core-web-vitals'
   ],
   plugins: ['@typescript-eslint', 'import', 'jsx-a11y', 'react', 'react-hooks'],
   root: true,
   rules: {
-    'no-use-before-define': 'off', // for "import React from 'react'" in react-scripts 4.0.1
-    '@typescript-eslint/no-use-before-define': ['error'], // same as above
     'lines-between-class-members': [
       'error',
       'always',
-      { exceptAfterSingleLine: true },
+      {exceptAfterSingleLine: true},
     ],
-    'no-void': ['error', { allowAsStatement: true }],
+    'no-void': ['error', {allowAsStatement: true}],
     'padding-line-between-statements': [
       'error',
-      { blankLine: 'always', prev: '*', next: 'return' },
+      {blankLine: 'always', prev: '*', next: 'return'},
     ],
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
+    'react/function-component-definition': [
+      'error', {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function",
+      }
+    ],
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
@@ -53,6 +57,9 @@ module.exports = {
         ignoreRestSiblings: false,
         varsIgnorePattern: '_',
       },
+    ],
+    '@typescript-eslint/require-await': [
+      'warn',
     ],
     'import/extensions': [
       'error',

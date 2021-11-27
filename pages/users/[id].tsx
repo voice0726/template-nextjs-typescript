@@ -1,4 +1,4 @@
-import { GetStaticProps, GetStaticPaths } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 
 import { User } from 'interfaces'
 import { sampleUserData } from 'utils/sample-data'
@@ -57,6 +57,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     // will receive `item` as a prop at build time
     return { props: { item } }
   } catch (err) {
-    return { props: { errors: err.message } }
+    return {props: {errors: err}}
   }
 }
