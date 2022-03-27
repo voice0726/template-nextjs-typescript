@@ -15,39 +15,15 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'airbnb',
-    'airbnb/hooks',
-    'plugin:import/errors',
-    'plugin:import/warnings',
+    'plugin:react-hooks/recommended',
+    'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'prettier',
-    'next',
-    'next/core-web-vitals'
+    'plugin:@next/next/recommended',
   ],
   plugins: ['@typescript-eslint', 'import', 'jsx-a11y', 'react', 'react-hooks'],
   root: true,
   rules: {
-    'lines-between-class-members': [
-      'error',
-      'always',
-      {exceptAfterSingleLine: true},
-    ],
-    'no-void': ['error', {allowAsStatement: true}],
-    'padding-line-between-statements': [
-      'error',
-      {blankLine: 'always', prev: '*', next: 'return'},
-    ],
-    'react/react-in-jsx-scope': 'off',
-    'react/prop-types': 'off',
-    'react/require-default-props': 'off',
-    'react/function-component-definition': [
-      'error', {
-        "namedComponents": "arrow-function",
-        "unnamedComponents": "arrow-function",
-      }
-    ],
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
@@ -58,8 +34,32 @@ module.exports = {
         varsIgnorePattern: '_',
       },
     ],
-    '@typescript-eslint/require-await': [
+    '@typescript-eslint/require-await': ['warn'],
+    'jsx-a11y/anchor-is-valid': [
+      'error',
+      {
+        components: ['Link'],
+        specialLink: ['hrefLeft', 'hrefRight'],
+        aspects: ['invalidHref', 'preferButton'],
+      },
+    ],
+    'import/order': [
       'warn',
+      {
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'object',
+          'type',
+        ],
+        'newlines-between': 'always',
+        pathGroupsExcludedImportTypes: ['builtin'],
+        alphabetize: { order: 'asc', caseInsensitive: true },
+      },
     ],
     'import/extensions': [
       'error',
@@ -69,6 +69,26 @@ module.exports = {
         jsx: 'never',
         ts: 'never',
         tsx: 'never',
+      },
+    ],
+    'lines-between-class-members': [
+      'error',
+      'always',
+      { exceptAfterSingleLine: true },
+    ],
+    'no-void': ['error', { allowAsStatement: true }],
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: '*', next: 'return' },
+    ],
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+    'react/require-default-props': 'off',
+    'react/function-component-definition': [
+      'error',
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
       },
     ],
     'react/jsx-filename-extension': [
@@ -82,15 +102,6 @@ module.exports = {
       {
         html: 'ignore',
         exceptions: ['Component'],
-      },
-    ],
-    // This rule is not compatible with Next.js's <Link /> components
-    'jsx-a11y/anchor-is-valid': [
-      'error',
-      {
-        components: ['Link'],
-        specialLink: ['hrefLeft', 'hrefRight'],
-        aspects: ['invalidHref', 'preferButton'],
       },
     ],
   },
@@ -107,6 +118,9 @@ module.exports = {
       node: {
         paths: [''],
       },
+    },
+    react: {
+      version: 'detect',
     },
   },
 };
