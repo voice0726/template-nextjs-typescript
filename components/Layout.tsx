@@ -27,8 +27,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
         <Link href='/users'>
           <a>Users List</a>
         </Link>{' '}
-        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}|{' '}
-        <a href='/api/users'>Users API</a>
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}| <a href='/api/users'>Users API</a>
       </nav>
     </header>
     {children}

@@ -46,16 +46,7 @@ module.exports = {
     'import/order': [
       'warn',
       {
-        groups: [
-          'builtin',
-          'external',
-          'internal',
-          'parent',
-          'sibling',
-          'index',
-          'object',
-          'type',
-        ],
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
         'newlines-between': 'always',
         pathGroupsExcludedImportTypes: ['builtin'],
         alphabetize: { order: 'asc', caseInsensitive: true },
@@ -71,16 +62,9 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'lines-between-class-members': [
-      'error',
-      'always',
-      { exceptAfterSingleLine: true },
-    ],
+    'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
     'no-void': ['error', { allowAsStatement: true }],
-    'padding-line-between-statements': [
-      'error',
-      { blankLine: 'always', prev: '*', next: 'return' },
-    ],
+    'padding-line-between-statements': ['error', { blankLine: 'always', prev: '*', next: 'return' }],
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
