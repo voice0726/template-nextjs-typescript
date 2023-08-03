@@ -17,17 +17,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
     </Head>
     <header>
       <nav>
-        <Link href="/">
-          Home
-        </Link>{' '}
-        |{' '}
-        <Link href="/about">
-          About
-        </Link>{' '}
-        |{' '}
-        <Link href="/users">
-          Users List
-        </Link>{' '}
+        <Link href="/">Home</Link> | <Link href="/about">About</Link> | <Link href="/users">Users List</Link>{' '}
         {/* eslint-disable-line @next/next/no-html-link-for-pages */}| <a href="/api/users">Users API</a>
       </nav>
     </header>
